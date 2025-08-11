@@ -1,0 +1,146 @@
+/* Aqui eu começo zerando todas as margens e espaçamentos padrão dos elementos,
+   e já defino o box-sizing pra border-box pra ficar mais fácil de controlar tamanhos.
+   Também defino a fonte "Poppins" pro site inteiro. */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Aqui eu deixo o fundo do site todo preto */
+body {
+  background-color: black;
+}
+
+/* Aqui eu criei um container pros botões, deixei ele com um espaçamento
+   em cima e embaixo, centralizei tudo e adicionei um espaço de 20px entre eles */
+.container-buttons {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Aqui eu estilizei o botão: cor de fundo verde, sem borda,
+   borda arredondada, texto preto, um pouco de padding e largura fixa de 110px.
+   Também coloquei um efeito de transição quando passar o mouse */
+button {
+  background-color: #79cb15;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 110px;
+  transition: background-color 0.3s;
+}
+
+/* Esse é o efeito quando passo o mouse: mudo a cor pra um laranja quase transparente,
+   deixo o texto branco e faço o botão dar uma leve diminuída (scale 0.9) */
+button:hover {
+  background-color: rgba(230, 126, 34, 0.8);
+  color: white;
+  transform: scale(0.9);
+}
+
+/* Aqui é a lista dos itens. Eu centralizei, tirei os marcadores (bolinhas)
+   e usei grid pra colocar 3 colunas de 200px com espaço entre elas */
+ul {
+  justify-content: center;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+  gap: 20px;
+}
+
+/* Aqui eu deixei todas as imagens com altura de 200px e com object-fit: cover
+   pra elas não distorcerem e manterem a proporção */
+.img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* Aqui eu deixo as imagens ocuparem toda a largura do container
+   e com borda arredondada */
+img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Aqui eu estilizei cada item da lista (li):
+   borda roxa, borda arredondada, um padding inicial e transição suave */
+li {
+  border: 2px solid #8133ff;
+  border-radius: 5px;
+  padding: 5px;
+  transition: padding 0.3s;
+}
+
+/* Quando passo o mouse no li, aumento o padding, troco o fundo
+   pra roxo transparente e mantenho a transição suave */
+li:hover {
+  padding: 10px;
+  background-color: rgba(39, 31, 53, 0.8);
+  transition: background-color 0.3s;
+}
+
+/* Aqui é o texto normal: branco, tamanho 16px e centralizado */
+p {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* Aqui é o preço do item: tamanho 14px, verde e em negrito */
+.item-price {
+  font-size: 14px;
+  color: #79cb15;
+  font-weight: bold;
+}
+
+/* Aqui é a parte responsiva para telas menores (até 450x950px) */
+@media screen and (max-width: 450px) and (max-height: 950px) {
+
+  /* Dou um padding interno pro corpo pra não colar nas bordas */
+  body {
+    padding: 10px;
+  }
+
+  /* Aqui ajusto o container dos botões pra telas menores */
+  .container-buttons {
+    size-adjust: auto;
+    gap: 10px;
+  }
+
+  /* Aqui faço os botões ocuparem 100% da largura (com limite de 150px)
+     e aumento o padding pra ficar mais fácil de clicar no celular */
+  button {
+    width: 100%;
+    max-width: 150px;
+    padding: 12px;
+  }
+
+  /* Aqui troco a lista pra ficar com 1 coluna só no celular */
+  ul {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* Diminui a altura das imagens no celular */
+  .img {
+    height: 150px;
+  }
+
+  /* Diminui o tamanho do texto no celular */
+  p {
+    font-size: 14px;
+  }
+
+  /* E também o tamanho do preço */
+  .item-price {
+    font-size: 12px;
+  }
+}
