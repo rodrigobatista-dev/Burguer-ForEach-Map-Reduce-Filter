@@ -49,5 +49,9 @@ O sistema exibe uma lista de hambúrgueres e permite aplicar diferentes funçõe
 
 3 .Clique nos botões para interagir com o cardápio.
 
+## 🧑‍💻 Autor
+
+**Rodrigo Batista Leite**  
+[GitHub](https://https://github.com/rodrigobatista-dev) | [LinkedIn](https://www.linkedin.com/in/rodrigo-batista-leite)
 
 
